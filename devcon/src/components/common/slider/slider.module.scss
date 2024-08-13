@@ -1,0 +1,98 @@
+@use 'assets/css/partials/index' as *;
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: $gaps-gap-8;
+  position: relative;
+
+  .top-section {
+    width: 100%;
+    padding-bottom: $gaps-gap-4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .controls {
+      display: flex;
+      align-items: center;
+
+      .arrows {
+        margin-left: $gaps-gap-8;
+
+        @media (max-width: $breakpoints-lg) {
+          margin-left: $gaps-gap-4;
+        }
+      }
+    }
+  }
+}
+
+.children {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: calc(100% + #{$gaps-gap-2 * 2}) !important;
+  left: -$gaps-gap-2;
+
+  .card {
+    &:not(.no-swipe) {
+      cursor: move; /* fallback if grab cursor is unsupported */
+      cursor: grab;
+      cursor: -moz-grab;
+      cursor: -webkit-grab;
+    }
+
+    height: 100%;
+    // margin-right: $gaps-gap-4;
+    margin-left: $gaps-gap-2;
+    margin-right: $gaps-gap-2;
+    margin-bottom: $gaps-gap-4;
+    background: white;
+  }
+}
+
+.arrows {
+  display: flex;
+  flex-wrap: nowrap;
+
+  .arrow-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    // padding: 8px;
+    touch-action: none;
+    border-radius: 100%;
+    // width: 1.5em;
+    // height: 1.5em;
+    border-color: #9FA1B7;
+    --color-icon: #9FA1B7;
+    cursor: pointer;
+
+    svg {
+      font-size: 0.8em;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      background: transparent !important;
+      // border-color: lighten(#9FA1B7, 50%);
+    }
+
+    > * {
+      flex-shrink: 0;
+    }
+
+    &:last-child {
+      margin-left: 8px;
+    }
+
+    // &:not(.always-buttons) {
+    //   @media (max-width: $breakpoints-lg) {
+    //     display: none;
+    //   }
+    // }
+  }
+}

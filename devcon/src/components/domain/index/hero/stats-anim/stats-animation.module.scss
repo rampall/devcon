@@ -1,0 +1,76 @@
+.container {
+  position: absolute;
+  width: 100%;
+  height: 200%;
+  bottom: -2px;
+  :global(canvas) {
+
+    background: transparent !important;
+  }
+
+  .element {
+    // box-shadow: 0px 0px 3px 1px rgb(87, 87, 87);
+    font-size: min(1.3vw, 32px);
+    padding: 1.1em 1em;
+    position: absolute;
+    pointer-events: none;
+    font-weight: bold;
+    border-radius: 32px;
+    color: white;
+    white-space: nowrap;
+    cursor: pointer;
+
+    @media (max-width: 600px) {
+      font-size: 12px !important;
+    }
+
+    @media (max-width: 900px) {
+      font-size: 14px !important;
+    }
+
+    @media (max-width: 1200px) {
+      font-size: 20px;
+    }
+
+    .number {
+      font-size: 1.25em;
+    }
+
+    &.teal {
+      background: #00B3A4;
+    }
+
+    &.white {
+      background:#E4F6FA;
+      color: #0FADCF;
+    }
+
+    &.blue {
+      background: #1B6FAE;
+    }
+
+    &.orange {
+      background: #F69022;
+    }
+
+    &.red {
+      background: #E55066;
+    }
+
+    &.yellow {
+      background: #F5D222;
+    }
+
+    &.green {
+      background: #88C43F;
+    }
+
+    &.blue-2 {
+      background: #0FADCF;
+    }
+
+    &.purple {
+      background: #7958A5;
+    }
+  }
+}

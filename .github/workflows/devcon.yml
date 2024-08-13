@@ -1,0 +1,33 @@
+name: Devcon Website CI
+on:
+  push:
+    paths:
+      - "lib/**"
+      - "devcon/**"
+      - ".github/workflows/devcon.yml"
+  pull_request:
+    paths:
+      - "lib/**"
+      - "devcon/**"
+      - ".github/workflows/devcon.yml"
+
+jobs:
+  build:
+    defaults:
+      run:
+        working-directory: ./devcon
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "16.x"
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Run Eslint // Lint
+        run: yarn lint
